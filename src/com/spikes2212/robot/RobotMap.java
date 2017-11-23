@@ -9,6 +9,7 @@ package com.spikes2212.robot;
 public class RobotMap {
 
 	public interface USB {
+		public static final int NAVIGATOR_JOYSTICK_PORT=0;
 	}
 
 	public interface CAN {
