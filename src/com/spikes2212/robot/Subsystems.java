@@ -2,6 +2,7 @@ package com.spikes2212.robot;
 
 import com.ctre.CANTalon;
 import com.spikes2212.utils.DoubleSpeedcontroller;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 
 public class Subsystems {
@@ -20,6 +21,8 @@ public class Subsystems {
     }
 
     public static class GearSystems {
-
+        public static SpeedController gearLiftSP = new CANTalon(RobotMap.CAN.LIFT);
+        public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MAX);
+        public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MIN);
     }
 }
