@@ -12,5 +12,18 @@ public class RobotMap {
         public static final int LEFT_TWO = 1;
         public static final int RIGHT_ONE = 2;
         public static final int RIGHT_TWO = 3;
+
+        public static final int LIFT = 4;
+
+        private CAN(){}
+    }
+
+    public static class DIO {
+        public static final int LIFT_LIMIT_MAX = 0;
+        public static final int LIFT_LIMIT_MIN = 1;
+
+        private DIO() {
+
+        }
     }
 }
