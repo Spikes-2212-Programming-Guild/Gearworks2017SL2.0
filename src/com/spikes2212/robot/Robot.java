@@ -8,8 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import com.spikes2212.robot.commands.ExampleCommand;
-import com.spikes2212.robot.subsystems.ExampleSubsystem;
+import com.spikes2212.utils.DoubleSpeedcontroller;
 
 /**
  * The VM is configured to automatically run this class, and to call the
