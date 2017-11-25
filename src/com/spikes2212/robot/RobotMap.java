@@ -22,8 +22,6 @@ public class RobotMap {
         public static final int LIFT_LIMIT_MAX = 0;
         public static final int LIFT_LIMIT_MIN = 1;
 
-        private DIO() {
-
-        }
+        private DIO() {}
     }
 }
