@@ -16,7 +16,12 @@ public class GearLift extends BasicSubsystem {
     );
 
     public enum LiftPosition {
-         UP, DOWN, MIDDLE, MIDDLE_DOWN, MIDDLE_UP
+         UP(4), DOWN(0), MIDDLE(2), MIDDLE_DOWN(1), MIDDLE_UP(3);
+
+        private int index;
+        LiftPosition(int index){
+            this.index = index;
+        }
     }
 
     private Encoder liftEncoder;
