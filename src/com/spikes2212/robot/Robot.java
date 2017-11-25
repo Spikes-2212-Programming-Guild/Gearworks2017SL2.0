@@ -2,6 +2,7 @@
 package com.spikes2212.robot;
 
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
+import com.spikes2212.robot.subsystems.GearLift;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -20,6 +21,7 @@ import com.spikes2212.utils.DoubleSpeedcontroller;
  */
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
+	public static GearLift gearLift;
 	public static OI oi;
 
 	/**
@@ -32,6 +34,12 @@ public class Robot extends IterativeRobot {
 				Subsystems.Drivetrain.leftSP::set,
 				Subsystems.Drivetrain.rightSP::set
 				);
+		gearLift = new GearLift(
+		        Subsystems.GearSystems.gearLiftSP::set,
+                Subsystems.GearSystems.maxLimit::get,
+                Subsystems.GearSystems.minLimit::get,
+                Subsystems.GearSystems.liftEncoder
+        );
 		oi = new OI();
 	}
 
