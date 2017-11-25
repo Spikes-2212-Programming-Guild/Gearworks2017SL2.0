@@ -28,5 +28,9 @@ public class MoveGearLift extends MoveBasicSubsystem {
         };
     }
 
+    @Override
+    protected boolean isFinished() {
+        return ((GearLift) basicSubsystem).getPosition() == targetPosition || isTimedOut();
 
+    }
 }
