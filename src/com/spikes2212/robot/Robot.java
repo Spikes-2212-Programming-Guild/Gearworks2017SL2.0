@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
 				SubsystemComponents.DrivetrainComponents.rightSP::set
 				);
 		elevator = new Elevator(
-		        SubsystemComponents.ElevatorComponents.gearElevatorSP::set,
+		        SubsystemComponents.ElevatorComponents.elevatorSP::set,
                 SubsystemComponents.ElevatorComponents.maxLimit::get,
                 SubsystemComponents.ElevatorComponents.minLimit::get,
                 SubsystemComponents.ElevatorComponents.liftEncoder

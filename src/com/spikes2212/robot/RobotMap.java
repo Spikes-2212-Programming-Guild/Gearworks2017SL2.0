@@ -13,7 +13,7 @@ public class RobotMap {
         public static final int RIGHT_ONE = 2;
         public static final int RIGHT_TWO = 3;
 
-        public static final int LIFT = 4;
+        public static final int ELEVATOR = 4;
 
         private CAN(){}
     }
