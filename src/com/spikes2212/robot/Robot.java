@@ -2,6 +2,7 @@
 package com.spikes2212.robot;
 
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
+import com.spikes2212.robot.subsystems.GearElevator;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -15,7 +16,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
-	public static com.spikes2212.robot.subsystems.GearElevator gearElevator;
+	public static GearElevator gearElevator;
 	public static OI oi;
 
 	/**
