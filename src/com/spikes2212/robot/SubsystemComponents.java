@@ -24,4 +24,10 @@ public class SubsystemComponents {
         public static Encoder liftEncoder = new Encoder(RobotMap.DIO.LIFT_ENCODER_ONE,
                 RobotMap.DIO.LIFT_ENCODER_TWO);
     }
+
+    public static class RollerGripperComponents {
+        public static SpeedController rollerGripperSP = new CANTalon(RobotMap.CAN.ROLLER_GRIPPER);
+        public static DigitalInput rollerGripperColorSensor =
+                new DigitalInput(RobotMap.DIO.ROLLER_GRIPPER_COLOR_SENSOR);
+    }
 }
