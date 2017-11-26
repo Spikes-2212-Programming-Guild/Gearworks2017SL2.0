@@ -2,20 +2,20 @@ package com.spikes2212.robot.commands;
 
 
 import com.spikes2212.genericsubsystems.commands.MoveBasicSubsystem;
-import com.spikes2212.robot.subsystems.GearElevator;
+import com.spikes2212.robot.subsystems.Elevator;
 
 import java.util.function.Supplier;
 
 public class MoveGearLift extends MoveBasicSubsystem {
 
-    private GearElevator.ElevatorState targetPosition;
+    private Elevator.ElevatorState targetPosition;
 
-    public MoveGearLift(GearElevator gearElevator, Supplier<Double> absoluteSpeedSupplier,
-                        GearElevator.ElevatorState targetPosition) {
-        super(gearElevator, absoluteSpeedSupplier);
+    public MoveGearLift(Elevator elevator, Supplier<Double> absoluteSpeedSupplier,
+                        Elevator.ElevatorState targetPosition) {
+        super(elevator, absoluteSpeedSupplier);
         this.targetPosition = targetPosition;
 
-        int speedMul = targetPosition.getIndex() - ((GearElevator) basicSubsystem).getPosition().getIndex();
+        int speedMul = targetPosition.getIndex() - ((Elevator) basicSubsystem).getPosition().getIndex();
         final int speedSign = speedMul / Math.abs(speedMul);
 
         speedSupplier = () -> speedSupplier.get() * (double) speedSign;
@@ -28,7 +28,7 @@ public class MoveGearLift extends MoveBasicSubsystem {
 
     @Override
     protected boolean isFinished() {
-        return ((GearElevator) basicSubsystem).getPosition() == targetPosition || isTimedOut();
+        return ((Elevator) basicSubsystem).getPosition() == targetPosition || isTimedOut();
 
     }
 }

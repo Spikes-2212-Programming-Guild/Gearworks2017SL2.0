@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class GearElevator extends BasicSubsystem {
+public class Elevator extends BasicSubsystem {
 
     public static final Supplier<Double> MIDDLE_SET_POINT = ConstantHandler.addConstantDouble(
             "Lift-Middle-Position",
@@ -34,8 +34,8 @@ public class GearElevator extends BasicSubsystem {
     }
 
 
-    public GearElevator(Consumer<Double> speedConsumer, Supplier<Boolean> maxLimit, Supplier<Boolean> minLimit,
-                        Encoder encoder) {
+    public Elevator(Consumer<Double> speedConsumer, Supplier<Boolean> maxLimit, Supplier<Boolean> minLimit,
+                    Encoder encoder) {
         super(speedConsumer, new TwoLimits(maxLimit, minLimit));
         this.encoder = encoder;
         this.maxLimit = maxLimit;

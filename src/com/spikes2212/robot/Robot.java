@@ -2,7 +2,7 @@
 package com.spikes2212.robot;
 
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
-import com.spikes2212.robot.subsystems.GearElevator;
+import com.spikes2212.robot.subsystems.Elevator;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
-	public static GearElevator gearElevator;
+	public static Elevator elevator;
 	public static OI oi;
 
 	/**
@@ -29,11 +29,11 @@ public class Robot extends IterativeRobot {
 				SubsystemComponents.DrivetrainComponents.leftSP::set,
 				SubsystemComponents.DrivetrainComponents.rightSP::set
 				);
-		gearElevator = new com.spikes2212.robot.subsystems.GearElevator(
-		        SubsystemComponents.GearElevatorComponents.gearElevatorSP::set,
-                SubsystemComponents.GearElevatorComponents.maxLimit::get,
-                SubsystemComponents.GearElevatorComponents.minLimit::get,
-                SubsystemComponents.GearElevatorComponents.liftEncoder
+		elevator = new Elevator(
+		        SubsystemComponents.ElevatorComponents.gearElevatorSP::set,
+                SubsystemComponents.ElevatorComponents.maxLimit::get,
+                SubsystemComponents.ElevatorComponents.minLimit::get,
+                SubsystemComponents.ElevatorComponents.liftEncoder
         );
 		oi = new OI();
 	}

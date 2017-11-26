@@ -17,7 +17,7 @@ public class SubsystemComponents {
         );
     }
 
-    public static class GearElevatorComponents {
+    public static class ElevatorComponents {
         public static SpeedController gearElevatorSP = new CANTalon(RobotMap.CAN.LIFT);
         public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MAX);
         public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MIN);
