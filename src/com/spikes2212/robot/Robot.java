@@ -1,6 +1,7 @@
 
 package com.spikes2212.robot;
 
+import com.spikes2212.dashboard.DashBoardController;
 import com.spikes2212.genericsubsystems.BasicSubsystem;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
 import com.spikes2212.genericsubsystems.limitationFunctions.Limitless;
@@ -20,6 +21,7 @@ public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
 	public static Elevator elevator;
 	public static BasicSubsystem rollerGripper;
+	public static DashBoardController dbc = new DashBoardController();
 	public static OI oi;
 
 
@@ -43,6 +45,8 @@ public class Robot extends IterativeRobot {
 		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,
 				new Limitless());
 
+        dbc.addBoolean("Roller-Gripper-Gear-In",
+                SubsystemComponents.RollerGripperComponents.colorSensor::get);
 		oi = new OI();
 	}
 
