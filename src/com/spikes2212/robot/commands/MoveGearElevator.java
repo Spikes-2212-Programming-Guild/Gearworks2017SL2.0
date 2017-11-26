@@ -13,8 +13,7 @@ public class MoveGearElevator extends MoveBasicSubsystem {
 
     public static final Supplier<Double> SPEED = ConstantHandler.addConstantDouble("Elevator-Speed", 0.2);
 
-    public MoveGearElevator(Elevator elevator,
-                            Elevator.ElevatorState targetPosition) {
+    public MoveGearElevator(Elevator elevator, Elevator.ElevatorState targetPosition) {
         super(elevator, SPEED);
         this.targetPosition = targetPosition;
 
