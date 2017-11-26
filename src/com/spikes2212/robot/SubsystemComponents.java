@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 
-public class Subsystems {
-    public static class Drivetrain {
+public class SubsystemComponents {
+    public static class DrivetrainComponents {
         public static SpeedController leftSP = new DoubleSpeedcontroller(
             new CANTalon(RobotMap.CAN.LEFT_ONE), new CANTalon(RobotMap.CAN.LEFT_TWO)
         );
@@ -17,11 +17,7 @@ public class Subsystems {
         );
     }
 
-    public static class Shooter {
-
-    }
-
-    public static class GearElevator {
+    public static class GearElevatorComponents {
         public static SpeedController gearElevatorSP = new CANTalon(RobotMap.CAN.LIFT);
         public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MAX);
         public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MIN);

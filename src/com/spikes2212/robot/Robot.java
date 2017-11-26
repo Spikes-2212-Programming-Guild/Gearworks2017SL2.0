@@ -26,14 +26,14 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		drivetrain = new TankDrivetrain(
-				Subsystems.Drivetrain.leftSP::set,
-				Subsystems.Drivetrain.rightSP::set
+				SubsystemComponents.DrivetrainComponents.leftSP::set,
+				SubsystemComponents.DrivetrainComponents.rightSP::set
 				);
 		gearElevator = new com.spikes2212.robot.subsystems.GearElevator(
-		        Subsystems.GearElevator.gearElevatorSP::set,
-                Subsystems.GearElevator.maxLimit::get,
-                Subsystems.GearElevator.minLimit::get,
-                Subsystems.GearElevator.liftEncoder
+		        SubsystemComponents.GearElevatorComponents.gearElevatorSP::set,
+                SubsystemComponents.GearElevatorComponents.maxLimit::get,
+                SubsystemComponents.GearElevatorComponents.minLimit::get,
+                SubsystemComponents.GearElevatorComponents.liftEncoder
         );
 		oi = new OI();
 	}
