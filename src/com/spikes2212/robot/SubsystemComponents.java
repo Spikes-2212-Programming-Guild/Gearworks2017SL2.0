@@ -27,7 +27,7 @@ public class SubsystemComponents {
 
     public static class RollerGripperComponents {
         public static SpeedController rollerGripperSP = new CANTalon(RobotMap.CAN.ROLLER_GRIPPER);
-        public static DigitalInput rollerGripperColorSensor =
+        public static DigitalInput colorSensor =
                 new DigitalInput(RobotMap.DIO.ROLLER_GRIPPER_COLOR_SENSOR);
     }
 }
