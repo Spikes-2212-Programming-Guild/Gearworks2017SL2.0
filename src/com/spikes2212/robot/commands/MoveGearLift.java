@@ -15,17 +15,16 @@ public class MoveGearLift extends MoveBasicSubsystem {
                         GearLift.LiftPosition targetPosition) {
         super(gearLift, absoluteSpeedSupplier);
         this.targetPosition = targetPosition;
+
+        int speedMul = targetPosition.index - ((GearLift) basicSubsystem).getPosition().index;
+        final int speedSign = speedMul / Math.abs(speedMul);
+
+        speedSupplier = () -> speedSupplier.get() * (double) speedSign;
     }
 
     @Override
     protected void initialize() {
         super.initialize();
-        int speedMul = targetPosition.index - ((GearLift) basicSubsystem).getPosition().index;
-        final int speedSign = speedMul / Math.abs(speedMul);
-
-        speedSupplier = () -> {
-            return speedSupplier.get() * (double) speedSign;
-        };
     }
 
     @Override
