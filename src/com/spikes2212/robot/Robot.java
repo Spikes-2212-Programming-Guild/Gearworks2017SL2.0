@@ -2,15 +2,9 @@
 package com.spikes2212.robot;
 
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
-import com.spikes2212.robot.subsystems.GearLift;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import com.spikes2212.utils.DoubleSpeedcontroller;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,7 +15,7 @@ import com.spikes2212.utils.DoubleSpeedcontroller;
  */
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
-	public static GearLift gearLift;
+	public static com.spikes2212.robot.subsystems.GearLift gearLift;
 	public static OI oi;
 
 	/**
@@ -34,11 +28,11 @@ public class Robot extends IterativeRobot {
 				Subsystems.Drivetrain.leftSP::set,
 				Subsystems.Drivetrain.rightSP::set
 				);
-		gearLift = new GearLift(
-		        Subsystems.GearSystems.gearLiftSP::set,
-                Subsystems.GearSystems.maxLimit::get,
-                Subsystems.GearSystems.minLimit::get,
-                Subsystems.GearSystems.liftEncoder
+		gearLift = new com.spikes2212.robot.subsystems.GearLift(
+		        Subsystems.GearLift.gearLiftSP::set,
+                Subsystems.GearLift.maxLimit::get,
+                Subsystems.GearLift.minLimit::get,
+                Subsystems.GearLift.liftEncoder
         );
 		oi = new OI();
 	}
