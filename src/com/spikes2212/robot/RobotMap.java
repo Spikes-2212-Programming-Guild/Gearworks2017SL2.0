@@ -8,9 +8,9 @@ package com.spikes2212.robot;
  */
 public class RobotMap {
     public static class CAN {
-        public static final int DRIVETRAIN_LEFT_1 = 0;
-        public static final int DRIVETRAIN_LEFT_2 = 1;
-        public static final int DRIVETRAIN_RIGHT_1 = 2;
-        public static final int DRIVETRAIN_RIGHT_2 = 3;
+        public static final int DRIVE_LEFT_1 = 0;
+        public static final int DRIVE_LEFT_2 = 1;
+        public static final int DRIVE_RIGHT_1 = 2;
+        public static final int DRIVE_RIGHT_2 = 3;
     }
 }
