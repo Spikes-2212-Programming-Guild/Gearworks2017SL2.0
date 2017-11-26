@@ -14,6 +14,7 @@ public class RobotMap {
         public static final int RIGHT_TWO = 3;
 
         public static final int ELEVATOR = 4;
+        public static final int ROLLER_GRIPPER = 5;
 
         private CAN(){}
     }
@@ -24,6 +25,7 @@ public class RobotMap {
 
         public static final int LIFT_ENCODER_ONE = 2;
         public static final int LIFT_ENCODER_TWO = 3;
+        public static final int ROLLER_GRIPPER_COLOR_SENSOR = 4;
 
         private DIO() {}
     }
