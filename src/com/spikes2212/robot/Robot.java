@@ -33,8 +33,9 @@ public class Robot extends IterativeRobot {
 		        SubsystemComponents.ElevatorComponents.elevatorSP::set,
                 SubsystemComponents.ElevatorComponents.maxLimit::get,
                 SubsystemComponents.ElevatorComponents.minLimit::get,
-                SubsystemComponents.ElevatorComponents.liftEncoder
+                SubsystemComponents.ElevatorComponents.elevatorEncoder
         );
+
 		oi = new OI();
 	}
 
