@@ -21,7 +21,7 @@ public class SubsystemComponents {
         public static SpeedController elevatorSP = new CANTalon(RobotMap.CAN.ELEVATOR);
         public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MAX);
         public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MIN);
-        public static Encoder liftEncoder = new Encoder(RobotMap.DIO.LIFT_ENCODER_ONE,
-                RobotMap.DIO.LIFT_ENCODER_TWO);
+        public static Encoder elevatorEncoder = new Encoder(RobotMap.DIO.ELEVATOR_ENCODER_A,
+                RobotMap.DIO.ELEVATOR_ENCODER_B);
     }
 }
