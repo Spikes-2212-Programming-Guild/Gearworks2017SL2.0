@@ -47,14 +47,19 @@ public class Elevator extends BasicSubsystem {
     }
 
     public ElevatorState getPosition() {
+        // the value of the encoder is the given middle value
         if (encoder.get() == MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE;
+        // the system is on its lower limit
         if (minLimit.get())
             return ElevatorState.DOWN;
+        // the system is on its higher limit
         if (maxLimit.get())
             return ElevatorState.UP;
+        //  the system is not touching any limits, and encoder value is less than middle
         if (encoder.get() < MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE_DOWN;
+        // the system is not touching any limits, and encoder value is more than middle (default option)
         return ElevatorState.MIDDLE_UP;
     }
 
