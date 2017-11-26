@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
-	public static com.spikes2212.robot.subsystems.GearLift gearLift;
+	public static com.spikes2212.robot.subsystems.GearElevator gearElevator;
 	public static OI oi;
 
 	/**
@@ -28,11 +28,11 @@ public class Robot extends IterativeRobot {
 				Subsystems.Drivetrain.leftSP::set,
 				Subsystems.Drivetrain.rightSP::set
 				);
-		gearLift = new com.spikes2212.robot.subsystems.GearLift(
-		        Subsystems.GearLift.gearLiftSP::set,
-                Subsystems.GearLift.maxLimit::get,
-                Subsystems.GearLift.minLimit::get,
-                Subsystems.GearLift.liftEncoder
+		gearElevator = new com.spikes2212.robot.subsystems.GearElevator(
+		        Subsystems.GearElevator.gearElevatorSP::set,
+                Subsystems.GearElevator.maxLimit::get,
+                Subsystems.GearElevator.minLimit::get,
+                Subsystems.GearElevator.liftEncoder
         );
 		oi = new OI();
 	}

@@ -21,8 +21,8 @@ public class Subsystems {
 
     }
 
-    public static class GearLift {
-        public static SpeedController gearLiftSP = new CANTalon(RobotMap.CAN.LIFT);
+    public static class GearElevator {
+        public static SpeedController gearElevatorSP = new CANTalon(RobotMap.CAN.LIFT);
         public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MAX);
         public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_MIN);
         public static Encoder liftEncoder = new Encoder(RobotMap.DIO.LIFT_ENCODER_ONE,
