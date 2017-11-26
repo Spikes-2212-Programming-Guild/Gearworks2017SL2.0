@@ -1,7 +1,9 @@
 
 package com.spikes2212.robot;
 
+import com.spikes2212.genericsubsystems.BasicSubsystem;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
+import com.spikes2212.genericsubsystems.limitationFunctions.Limitless;
 import com.spikes2212.robot.subsystems.Elevator;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -17,7 +19,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
 	public static Elevator elevator;
+	public static BasicSubsystem rollerGripper;
 	public static OI oi;
+
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -35,6 +39,10 @@ public class Robot extends IterativeRobot {
                 SubsystemComponents.ElevatorComponents.minLimit::get,
                 SubsystemComponents.ElevatorComponents.liftEncoder
         );
+
+		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,
+				new Limitless());
+
 		oi = new OI();
 	}
 
