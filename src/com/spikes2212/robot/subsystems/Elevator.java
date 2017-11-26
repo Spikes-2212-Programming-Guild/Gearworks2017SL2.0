@@ -21,7 +21,7 @@ public class Elevator extends BasicSubsystem {
     private Supplier<Boolean> maxLimit, minLimit;
 
     public enum ElevatorState {
-         UP(4), MIDDLE_UP(3), MIDDLE(2), MIDDLE_DOWN(1), DOWN(1);
+         DOWN(0), MIDDLE_DOWN(1), MIDDLE(2), MIDDLE_UP(3), UP(4);
 
         private int index;
         ElevatorState(int index){
