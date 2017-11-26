@@ -18,8 +18,4 @@ public class Subsystems {
     public static class Shooter {
 
     }
-
-    public static class GearSystems {
-
-    }
 }
