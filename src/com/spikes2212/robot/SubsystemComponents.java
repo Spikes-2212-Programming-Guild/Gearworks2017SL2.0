@@ -9,11 +9,11 @@ import edu.wpi.first.wpilibj.SpeedController;
 public class SubsystemComponents {
     public static class DrivetrainComponents {
         public static SpeedController leftSP = new DoubleSpeedcontroller(
-            new CANTalon(RobotMap.CAN.LEFT_ONE), new CANTalon(RobotMap.CAN.LEFT_TWO)
+            new CANTalon(RobotMap.CAN.DRIVE_LEFT_1), new CANTalon(RobotMap.CAN.DRIVE_LEFT_2)
         );
 
         public static SpeedController rightSP = new DoubleSpeedcontroller(
-                new CANTalon(RobotMap.CAN.RIGHT_ONE), new CANTalon(RobotMap.CAN.RIGHT_TWO)
+                new CANTalon(RobotMap.CAN.DRIVE_RIGHT_1), new CANTalon(RobotMap.CAN.DRIVE_RIGHT_2)
         );
     }
 
