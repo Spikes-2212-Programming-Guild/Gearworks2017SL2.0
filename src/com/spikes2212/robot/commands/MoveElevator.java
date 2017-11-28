@@ -15,7 +15,7 @@ public class MoveElevator extends MoveBasicSubsystem {
 
 
     public MoveElevator(Elevator elevator, Elevator.ElevatorState targetPosition) {
-        super(elevator, () -> (elevator.getPosition().getIndex() > targetPosition.getIndex())
+        super(elevator, () -> (elevator.getPosition().getIndex() < targetPosition.getIndex())
                 ? Elevator.SPEED.get() : -Elevator.SPEED.get());
         this.targetPosition = targetPosition;
     }
