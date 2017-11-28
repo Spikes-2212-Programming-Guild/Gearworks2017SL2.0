@@ -3,6 +3,7 @@ package com.spikes2212.robot;
 
 import com.spikes2212.dashboard.DashBoardController;
 import com.spikes2212.genericsubsystems.BasicSubsystem;
+import com.spikes2212.genericsubsystems.LimitedSubsystem;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
 import com.spikes2212.genericsubsystems.limitationFunctions.Limitless;
 import com.spikes2212.genericsubsystems.limitationFunctions.TwoLimits;
@@ -16,6 +17,7 @@ public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
 	public static Elevator elevator;
 	public static BasicSubsystem rollerGripper;
+	public static BasicSubsystem gearFolder;
 	public static DashBoardController dbc = new DashBoardController();
 	public static OI oi;
 
@@ -36,6 +38,10 @@ public class Robot extends IterativeRobot {
 
 		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,
 				new TwoLimits(()-> false, SubsystemComponents.RollerGripperComponents.colorSensor::get)); // TODO figure out motor direction
+
+		gearFolder = new BasicSubsystem(SubsystemComponents.GearFolderComponents.gearFolderSP::set,
+				new TwoLimits(SubsystemComponents.GearFolderComponents.maxLimit::get,
+						SubsystemComponents.GearFolderComponents.minLimit::get));
 
         dbc.addBoolean("Roller-Gripper-Gear-In",
                 SubsystemComponents.RollerGripperComponents.colorSensor::get);
