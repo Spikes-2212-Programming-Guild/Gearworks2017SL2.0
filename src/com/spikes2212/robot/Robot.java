@@ -5,6 +5,7 @@ import com.spikes2212.dashboard.DashBoardController;
 import com.spikes2212.genericsubsystems.BasicSubsystem;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
 import com.spikes2212.genericsubsystems.limitationFunctions.Limitless;
+import com.spikes2212.genericsubsystems.limitationFunctions.TwoLimits;
 import com.spikes2212.robot.subsystems.Elevator;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -33,7 +34,7 @@ public class Robot extends IterativeRobot {
         );
 
 		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,
-				new Limitless());
+				new TwoLimits(()-> false, SubsystemComponents.RollerGripperComponents.colorSensor::get));
 
         dbc.addBoolean("Roller-Gripper-Gear-In",
                 SubsystemComponents.RollerGripperComponents.colorSensor::get);
