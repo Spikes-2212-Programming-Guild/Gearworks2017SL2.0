@@ -7,7 +7,7 @@ package com.spikes2212.robot;
  * floating around.
  */
 public class RobotMap {
-    public static class CAN {
+    public static final class CAN {
         public static final int DRIVE_LEFT_1 = 0;
         public static final int DRIVE_LEFT_2 = 1;
         public static final int DRIVE_RIGHT_1 = 2;
@@ -20,7 +20,7 @@ public class RobotMap {
         private CAN(){}
     }
 
-    public static class DIO {
+    public static final class DIO {
         public static final int ELEVATOR_LIMIT_MAX = 0;
         public static final int ELEVATOR_LIMIT_MIN = 1;
 
@@ -34,7 +34,8 @@ public class RobotMap {
         private DIO() {}
     }
 
-    public static class AnalogInput {
+    public static final class AnalogInput {
         public static final int GEAR_FOLDER_POTENTIOMETER = 1;
+        private AnalogInput(){}
     }
 }
