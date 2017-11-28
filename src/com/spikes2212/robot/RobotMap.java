@@ -38,4 +38,13 @@ public class RobotMap {
         public static final int GEAR_FOLDER_POTENTIOMETER = 1;
         private AnalogInput(){}
     }
+    public static final class JOYSTICK {
+
+        public static final int JOYSTICK_1 = 0;
+        public static final int JOYSTICK_2 = 1;
+
+        public static final int XBOXUID = 3;
+
+        private JOYSTICK() {}
+    }
 }
