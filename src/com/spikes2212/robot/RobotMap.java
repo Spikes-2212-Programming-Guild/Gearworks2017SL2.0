@@ -8,10 +8,10 @@ package com.spikes2212.robot;
  */
 public class RobotMap {
     public static class CAN {
-        public static final int LEFT_ONE = 0;
-        public static final int LEFT_TWO = 1;
-        public static final int RIGHT_ONE = 2;
-        public static final int RIGHT_TWO = 3;
+        public static final int DRIVE_LEFT_1 = 0;
+        public static final int DRIVE_LEFT_2 = 1;
+        public static final int DRIVE_RIGHT_1 = 2;
+        public static final int DRIVE_RIGHT_2 = 3;
 
         public static final int ELEVATOR = 4;
 
