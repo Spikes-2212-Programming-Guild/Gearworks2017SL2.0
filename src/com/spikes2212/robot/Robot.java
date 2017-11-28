@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
         );
 
 		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,
-				new TwoLimits(()-> false, SubsystemComponents.RollerGripperComponents.colorSensor::get));
+				new TwoLimits(()-> false, SubsystemComponents.RollerGripperComponents.colorSensor::get)); // TODO figure out motor direction
 
         dbc.addBoolean("Roller-Gripper-Gear-In",
                 SubsystemComponents.RollerGripperComponents.colorSensor::get);
