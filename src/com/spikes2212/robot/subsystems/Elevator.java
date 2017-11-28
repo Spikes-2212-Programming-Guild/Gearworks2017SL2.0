@@ -47,14 +47,19 @@ public class Elevator extends BasicSubsystem {
     }
 
     public ElevatorState getPosition() {
+        // the system is at its middle position (given by the encoder)
         if (encoder.get() == MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE;
+        // the system is at its lowest position
         if (minLimit.get())
             return ElevatorState.DOWN;
+        // the system is at its highest position
         if (maxLimit.get())
             return ElevatorState.UP;
+        // the system is below the middle and above the down position
         if (encoder.get() < MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE_DOWN;
+        // the system is above the middle and below the up position (default option)
         return ElevatorState.MIDDLE_UP;
     }
 
