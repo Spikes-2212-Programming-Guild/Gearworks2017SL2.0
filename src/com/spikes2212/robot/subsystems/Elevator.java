@@ -46,7 +46,7 @@ public class Elevator extends BasicSubsystem {
 
     }
 
-    public ElevatorState getPosition() {
+    public ElevatorState getState() {
         // the system is at its middle position (given by the encoder)
         if (encoder.get() == MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE;
