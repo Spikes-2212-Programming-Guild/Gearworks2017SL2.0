@@ -12,8 +12,8 @@ public class RobotMap {
         public static final int DRIVE_LEFT_2 = 1;
         public static final int DRIVE_RIGHT_1 = 2;
         public static final int DRIVE_RIGHT_2 = 3;
-
         public static final int ELEVATOR = 4;
+        public static final int ROLLER_GRIPPER = 5;
 
         private CAN(){}
     }
@@ -25,6 +25,7 @@ public class RobotMap {
         public static final int ELEVATOR_ENCODER_A = 2;
         public static final int ELEVATOR_ENCODER_B = 3;
 
+        public static final int ROLLER_GRIPPER_COLOR_SENSOR = 4;
         private DIO() {}
     }
 }

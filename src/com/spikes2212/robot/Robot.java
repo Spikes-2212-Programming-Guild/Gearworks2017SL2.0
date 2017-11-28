@@ -1,7 +1,11 @@
 
 package com.spikes2212.robot;
 
+import com.spikes2212.dashboard.DashBoardController;
+import com.spikes2212.genericsubsystems.BasicSubsystem;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
+import com.spikes2212.genericsubsystems.limitationFunctions.Limitless;
+import com.spikes2212.genericsubsystems.limitationFunctions.TwoLimits;
 import com.spikes2212.robot.subsystems.Elevator;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -11,7 +15,10 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
 	public static Elevator elevator;
+	public static BasicSubsystem rollerGripper;
+	public static DashBoardController dbc = new DashBoardController();
 	public static OI oi;
+
 
 
 	@Override
@@ -27,6 +34,11 @@ public class Robot extends IterativeRobot {
                 SubsystemComponents.ElevatorComponents.encoder
         );
 
+		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,
+				new TwoLimits(()-> false, SubsystemComponents.RollerGripperComponents.colorSensor::get)); // TODO figure out motor direction
+
+        dbc.addBoolean("Roller-Gripper-Gear-In",
+                SubsystemComponents.RollerGripperComponents.colorSensor::get);
 		oi = new OI();
 	}
 
