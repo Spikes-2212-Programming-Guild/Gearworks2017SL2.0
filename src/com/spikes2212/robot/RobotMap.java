@@ -19,13 +19,13 @@ public class RobotMap {
     }
 
     public static class DIO {
-        public static final int LIFT_LIMIT_MAX = 0;
-        public static final int LIFT_LIMIT_MIN = 1;
+        public static final int ELEVATOR_LIMIT_MAX = 0;
+        public static final int ELEVATOR_LIMIT_MIN = 1;
 
-        public static final int LIFT_ENCODER_ONE = 2;
-        public static final int LIFT_ENCODER_TWO = 3;
+        public static final int ELEVATOR_ENCODER_A = 2;
+        public static final int ELEVATOR_ENCODER_B = 3;
+
         public static final int ROLLER_GRIPPER_COLOR_SENSOR = 4;
-
         private DIO() {}
     }
 }

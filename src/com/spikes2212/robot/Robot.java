@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+
 public class Robot extends IterativeRobot {
 	public static TankDrivetrain drivetrain;
 	public static Elevator elevator;
@@ -30,7 +31,7 @@ public class Robot extends IterativeRobot {
 		        SubsystemComponents.ElevatorComponents.elevatorSP::set,
                 SubsystemComponents.ElevatorComponents.maxLimit::get,
                 SubsystemComponents.ElevatorComponents.minLimit::get,
-                SubsystemComponents.ElevatorComponents.liftEncoder
+                SubsystemComponents.ElevatorComponents.encoder
         );
 
 		rollerGripper = new BasicSubsystem(SubsystemComponents.RollerGripperComponents.rollerGripperSP::set,

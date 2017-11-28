@@ -11,8 +11,7 @@ import java.util.function.Supplier;
 public class Elevator extends BasicSubsystem {
 
     public static final Supplier<Double> MIDDLE_SET_POINT = ConstantHandler.addConstantDouble(
-            "Lift-Middle-Position",
-            0
+            "Lift-Middle-Position", 0
     );
 
 
@@ -22,7 +21,7 @@ public class Elevator extends BasicSubsystem {
     private Supplier<Boolean> maxLimit, minLimit;
 
     public enum ElevatorState {
-         UP(4), MIDDLE_UP(3), MIDDLE(2), MIDDLE_DOWN(1), DOWN(1);
+         DOWN(0), MIDDLE_DOWN(1), MIDDLE(2), MIDDLE_UP(3), UP(4);
 
         private int index;
         ElevatorState(int index){
@@ -46,20 +45,20 @@ public class Elevator extends BasicSubsystem {
 
     }
 
-    public ElevatorState getPosition() {
-        // the value of the encoder is the given middle value
+    public ElevatorState getState() {
+        // the system is at its middle position (given by the encoder)
         if (encoder.get() == MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE;
-        // the system is on its lower limit
+        // the system is at its lowest position
         if (minLimit.get())
             return ElevatorState.DOWN;
-        // the system is on its higher limit
+        // the system is at its highest position
         if (maxLimit.get())
             return ElevatorState.UP;
-        //  the system is not touching any limits, and encoder value is less than middle
+        // the system is below the middle and above the down position
         if (encoder.get() < MIDDLE_SET_POINT.get())
             return ElevatorState.MIDDLE_DOWN;
-        // the system is not touching any limits, and encoder value is more than middle (default option)
+        // the system is above the middle and below the up position (default option)
         return ElevatorState.MIDDLE_UP;
     }
 
