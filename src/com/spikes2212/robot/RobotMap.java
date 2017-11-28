@@ -15,6 +15,8 @@ public class RobotMap {
         public static final int ELEVATOR = 4;
         public static final int ROLLER_GRIPPER = 5;
 
+        public static final int GEAR_FOLDER = 6;
+
         private CAN(){}
     }
 
@@ -26,6 +28,13 @@ public class RobotMap {
         public static final int ELEVATOR_ENCODER_B = 3;
 
         public static final int ROLLER_GRIPPER_COLOR_SENSOR = 4;
+
+        public static final int GEAR_FOLDER_LIMIT_MAX = 5;
+        public static final int GEAR_FOLDER_LIMIT_MIN = 6;
         private DIO() {}
+    }
+
+    public static class AnalogInput {
+        public static final int GEAR_FOLDER_POTENTIOMETER = 1;
     }
 }

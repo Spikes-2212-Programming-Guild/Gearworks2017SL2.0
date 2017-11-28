@@ -2,6 +2,7 @@ package com.spikes2212.robot;
 
 import com.ctre.CANTalon;
 import com.spikes2212.utils.DoubleSpeedcontroller;
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -29,5 +30,13 @@ public class SubsystemComponents {
         public static SpeedController rollerGripperSP = new CANTalon(RobotMap.CAN.ROLLER_GRIPPER);
         public static DigitalInput colorSensor =
                 new DigitalInput(RobotMap.DIO.ROLLER_GRIPPER_COLOR_SENSOR);
+    }
+
+    public static class GearFolderComponents {
+        public static SpeedController gearFolderSP = new CANTalon(RobotMap.CAN.GEAR_FOLDER);
+        public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.GEAR_FOLDER_LIMIT_MAX);
+        public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.GEAR_FOLDER_LIMIT_MIN);
+        public static AnalogPotentiometer potentiometer =
+                new AnalogPotentiometer(RobotMap.AnalogInput.GEAR_FOLDER_POTENTIOMETER);
     }
 }
