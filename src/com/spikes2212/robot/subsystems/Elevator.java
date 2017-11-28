@@ -10,6 +10,7 @@ import java.util.function.Supplier;
 
 public class Elevator extends BasicSubsystem {
 
+    public static final Supplier<Double> SPEED = ConstantHandler.addConstantDouble("Elevator-Speed", 0.2);
     public static final Supplier<Double> MIDDLE_SET_POINT = ConstantHandler.addConstantDouble(
             "Lift-Middle-Position", 0
     );
