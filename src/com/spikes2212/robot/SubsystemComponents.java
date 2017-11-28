@@ -32,11 +32,11 @@ public class SubsystemComponents {
                 new DigitalInput(RobotMap.DIO.ROLLER_GRIPPER_COLOR_SENSOR);
     }
 
-    public static class GearPickerComponents {
-        public static SpeedController gearPickerSP = new CANTalon(RobotMap.CAN.GEAR_PICKER);
-        public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.GEAR_PICKER_LIMIT_MAX);
-        public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.GEAR_PICKER_LIMIT_MIN);
+    public static class GearFolderComponents {
+        public static SpeedController gearFolderSP = new CANTalon(RobotMap.CAN.GEAR_FOLDER);
+        public static DigitalInput maxLimit = new DigitalInput(RobotMap.DIO.GEAR_FOLDER_LIMIT_MAX);
+        public static DigitalInput minLimit = new DigitalInput(RobotMap.DIO.GEAR_FOLDER_LIMIT_MIN);
         public static AnalogPotentiometer potentiometer =
-                new AnalogPotentiometer(RobotMap.AnalogInput.GEAR_PICKER_PATENTIOMENTER);
+                new AnalogPotentiometer(RobotMap.AnalogInput.GEAR_FOLDER_POTENTIOMETER);
     }
 }
