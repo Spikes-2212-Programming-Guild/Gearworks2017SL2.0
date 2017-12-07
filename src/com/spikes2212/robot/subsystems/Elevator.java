@@ -11,8 +11,12 @@ import java.util.function.Supplier;
 public class Elevator extends BasicSubsystem {
 
     public static final Supplier<Double> SPEED = ConstantHandler.addConstantDouble("Elevator-Speed", 0.2);
-    public static final Supplier<Double> MIDDLE_SET_POINT = ConstantHandler.addConstantDouble(
-            "Lift-Middle-Position", 0
+    public static final Supplier<Integer> MIDDLE_SET_POINT = ConstantHandler.addConstantInt(
+            "Elevator-Middle-Set-Point", 50
+    );
+
+    public static final Supplier<Integer> HIGH_SET_POINT = ConstantHandler.addConstantInt(
+            "Elevator-High-Set-Point", 100
     );
 
 
@@ -54,7 +58,7 @@ public class Elevator extends BasicSubsystem {
         if (minLimit.get())
             return ElevatorState.DOWN;
         // the system is at its highest position
-        if (maxLimit.get())
+        if (encoder.get() == HIGH_SET_POINT.get())
             return ElevatorState.UP;
         // the system is below the middle and above the down position
         if (encoder.get() < MIDDLE_SET_POINT.get())
