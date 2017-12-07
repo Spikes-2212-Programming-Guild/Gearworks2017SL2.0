@@ -10,11 +10,21 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI /*GEVALD*/ {
 
-    private Joystick driverLeft;
-    private Joystick driverRight;
-    private XboXUID navigatorXboxUID;
+    private Joystick driverLeft = new Joystick(0);
+    private Joystick driverRight = new Joystick(1);
+
+    private XboXUID navigatorXboxUID = new XboXUID(2);
 
     public OI() {
+        initButtons();
+        initDriver();
+    }
+
+    private void initDriver() {
+
+    }
+
+    private void initButtons() {
 
     }
 
